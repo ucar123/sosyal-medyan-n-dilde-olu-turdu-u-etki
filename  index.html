@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuşak//Dil — Sosyal Medya Dili ve Kuşaklararası İletişim Araştırması</title>
+  <!-- Google Fonts: Fraunces, Space Grotesk, JetBrains Mono & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#232c37',
+            paper: '#ece4d2',
+            paper2: '#e2d8bf',
+            paperLight: '#fbf8f0',
+            brick: '#a1543e',
+            teal: '#2f8b7d',
+            muted: '#746b58',
+          },
+          fontFamily: {
+            serif: ['Fraunces', 'serif'],
+            sans: ['Space Grotesk', 'Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Özel Kart Çevirme (3D Flip) ve Yumuşak Geçiş Stilleri */
+    html { scroll-behavior: smooth; }
+    body { background-color: #ece4d2; color: #232c37; }
+    .perspective-1200 { perspective: 1200px; }
+    .transform-style-3d { transform-style: preserve-3d; transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1); }
+    .backface-hidden { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+    .rotate-y-180 { transform: rotateY(180deg); }
+    .card.flipped .card-inner { transform: rotateY(180deg); }
+
+    /* Özel kaydırma çubuğu */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #e2d8bf; }
+    ::-webkit-scrollbar-thumb { background: #a1543e; border-radius: 4px; }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-brick selection:text-white">
+
+  <!-- Üst Navigasyon -->
+  <header class="sticky top-0 z-40 bg-paper/95 backdrop-blur-md border-b border-ink/15">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-3">
+      <a href="#top" class="font-serif text-xl sm:text-2xl font-bold tracking-tight flex items-center gap-1">
+        Kuşak<span class="text-brick">//</span>Dil
+        <span class="hidden sm:inline-block ml-2 text-xs font-sans font-medium px-2 py-0.5 rounded-full bg-ink/10 text-muted">TÜBİTAK 2204-A</span>
+      </a>
+
+      <nav class="flex items-center gap-3 sm:gap-5 text-xs sm:text-sm font-medium overflow-x-auto py-1">
+        <a href="#ozet" class="hover:text-brick transition-colors whitespace-nowrap">Özet &amp; Kuram</a>
+        <a href="#hipotezler" class="hover:text-brick transition-colors whitespace-nowrap">Amaç &amp; Hipotezler</a>
+        <a href="#yontem" class="hover:text-brick transition-colors whitespace-nowrap">Yöntem &amp; Takvim</a>
+        <a href="#bulgular" class="hover:text-brick transition-colors whitespace-nowrap">Bulgular</a>
+        <a href="#rehber-bolumu" class="bg-ink text-paper px-3.5 py-2 rounded-full font-semibold hover:bg-brick transition-colors whitespace-nowrap shadow-sm">
+          Kavram Rehberi &amp; Test →
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Bölümü (İnfografik & Dilsel Kopukluk Özeti) -->
+  <section id="top" class="pt-10 pb-14 sm:pt-16 sm:pb-20 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-muted bg-paperLight border border-ink/15 px-3.5 py-1.5 rounded-full mb-5">
+        <span class="w-2 h-2 rounded-full bg-teal"></span>
+        Sosyoloji Alanı · Dijital Dönüşüm / Dil ve İletişim · Tek Okul Örneklemi
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-7">
+          <h1 class="font-serif text-3xl sm:text-5xl font-bold leading-tight text-ink mb-5">
+            Sosyal Medya Dil Kullanımının Lise Öğrencilerinin Günlük Diline ve Kuşaklararası İletişime Etkisi
+          </h1>
+          <p class="text-base sm:text-lg text-ink/85 leading-relaxed mb-7 max-w-2xl">
+            120 lise öğrencisiyle yürütülen bu karma araştırma, günlük konuşmaya sızan dijital jargonun aile büyükleriyle kurulan iletişimde nasıl bir <strong class="text-brick font-semibold">kod kopukluğuna</strong> dönüştüğünü ölçüyor — ve bu kopukluğu onarmak için <strong>70 kavramlık interaktif rehber</strong> ile <strong>konuşma analizi testi</strong> sunuyor.
+          </p>
+
+          <!-- Diyalog Baloncukları -->
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="bg-white border border-ink/15 rounded-2xl rounded-tl-sm p-4 shadow-sm">
+              <div class="text-xs font-semibold uppercase tracking-wider text-teal mb-1.5 flex items-center justify-between">
+                <span>Lise Öğrencisi (Akran Kodu)</span>
+                <span>📱</span>
+              </div>
+              <p class="text-sm sm:text-base">
+                "Of, bugün sınıfta resmen <span class="font-mono font-semibold text-teal bg-teal/10 px-1.5 py-0.5 rounded">cringe</span> oldum, üstüne bir de <span class="font-mono font-semibold text-teal bg-teal/10 px-1.5 py-0.5 rounded">ghostlandım</span>."
+              </p>
+            </div>
+
+            <div class="bg-paper2 border border-ink/15 rounded-2xl rounded-tr-sm p-4 shadow-sm">
+              <div class="text-xs font-semibold uppercase tracking-wider text-brick mb-1.5 flex items-center justify-between">
+                <span>Aile Büyüğü (Geleneksel Kod)</span>
+                <span>☕</span>
+              </div>
+              <p class="font-serif italic text-sm sm:text-base text-ink/90">
+                "Yine ne hastalığına yakalandın canım? Hem kim seni hayaletle korkuttu?"
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- İnfografik 3 Sütunlu Görsel Kavram Özeti (SVG İllüstrasyonlu) -->
+        <div class="lg:col-span-5 bg-paperLight border border-ink/15 rounded-2xl p-5 sm:p-6 shadow-sm">
+          <div class="text-xs font-bold uppercase tracking-wider text-brick mb-3">Araştırmanın 3 Temel Ekseni</div>
+          <div class="space-y-4">
+            <!-- Eksen 1 -->
+            <div class="flex items-start gap-3.5 p-3 rounded-xl bg-paper/60 border border-ink/10">
+              <div class="w-10 h-10 rounded-xl bg-teal/15 text-teal flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-serif font-semibold text-sm text-ink">Kuşaklararası İletişim Köprüsü</h3>
+                <p class="text-xs text-ink/75 mt-0.5">Gençlerin dijital ses dalgaları ile büyüklerin geleneksel söz varlığı arasında ortak anlam zemini kurma.</p>
+              </div>
+            </div>
+
+            <!-- Eksen 2 -->
+            <div class="flex items-start gap-3.5 p-3 rounded-xl bg-paper/60 border border-ink/10">
+              <div class="w-10 h-10 rounded-xl bg-brick/15 text-brick flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-serif font-semibold text-sm text-ink">Dijital Jargonun Günlük Dile Dönüşümü</h3>
+                <p class="text-xs text-ink/75 mt-0.5">Sosyal medya etiketlerinin (#) yüz yüze sohbetlere taşınması ve Türkçe eklerle fiilleşmesi.</p>
+              </div>
+            </div>
+
+            <!-- Eksen 3 -->
+            <div class="flex items-start gap-3.5 p-3 rounded-xl bg-paper/60 border border-ink/10">
+              <div class="w-10 h-10 rounded-xl bg-ink/10 text-ink flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <circle cx="9" cy="12" r="5" />
+                  <circle cx="15" cy="12" r="5" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-serif font-semibold text-sm text-ink">Anlam ve İletişim Farkı (Venn Kesişimi)</h3>
+                <p class="text-xs text-ink/75 mt-0.5">İki kuşağın kelime dağarcığı kesişimindeki "?" alanını 1 sayfalık pratik rehberle netleştirme.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hızlı İstatistik Şeridi -->
+          <div class="grid grid-cols-3 gap-2 mt-5 pt-4 border-t border-ink/15 text-center">
+            <div>
+              <div class="font-serif text-xl font-bold text-ink">120</div>
+              <div class="text-[11px] text-muted">Nicel Anket</div>
+            </div>
+            <div>
+              <div class="font-serif text-xl font-bold text-brick">10</div>
+              <div class="text-[11px] text-muted">Nitel Mülakat</div>
+            </div>
+            <div>
+              <div class="font-serif text-xl font-bold text-teal">70</div>
+              <div class="text-[11px] text-muted">Kavram Kartı</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Özet & Kuramsal Çerçeve -->
+  <section id="ozet" class="py-14 px-4 sm:px-6 border-t border-ink/15 bg-paperLight/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-xs font-bold uppercase tracking-wider text-brick mb-2">01 · Özet ve Kuramsal Çerçeve</div>
+      <h2 class="font-serif text-2xl sm:text-3xl font-bold mb-6">Dijital Dil Aile Masasına Oturunca</h2>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="bg-paperLight border border-ink/15 rounded-2xl p-6">
+          <h3 class="font-serif text-lg font-semibold mb-2">Araştırmanın Odağı</h3>
+          <p class="text-sm sm:text-base text-ink/85 leading-relaxed">
+            Sosyal medya platformlarında yaygınlaşan dijital jargon, kısaltmalar ve yabancı kökenli ifadelerin lise öğrencilerinin günlük konuşma diline yansımalarını incelemek ve bu dilsel dönüşümün ebeveyn ile aile büyükleriyle kurulan iletişimde yarattığı anlam kopukluklarını belirlemek amacıyla yürütülmüştür.
+          </p>
+          <div class="mt-4 pt-3 border-t border-ink/10 flex flex-wrap gap-1.5">
+            <span class="text-xs bg-paper px-2.5 py-1 rounded-md border border-ink/10">#SosyalMedyaDili</span>
+            <span class="text-xs bg-paper px-2.5 py-1 rounded-md border border-ink/10">#Kuşaklararasıİletişim</span>
+            <span class="text-xs bg-paper px-2.5 py-1 rounded-md border border-ink/10">#DijitalJargon</span>
+            <span class="text-xs bg-paper px-2.5 py-1 rounded-md border border-ink/10">#İletişimUyumKuramı</span>
+          </div>
+        </div>
+
+        <div class="bg-paperLight border border-ink/15 rounded-2xl p-6">
+          <h3 class="font-serif text-lg font-semibold mb-2">İletişim Uyum Kuramı (CAT)</h3>
+          <p class="text-sm sm:text-base text-ink/85 leading-relaxed">
+            Howard Giles tarafından geliştirilen <strong>İletişim Uyum Kuramı</strong>'na göre gençler, akran gruplarına kabul edilmek için dijital kalıpları kullanarak <em>yakınlaşma (convergence)</em> stratejisi izler. Ancak bu kapalı kodları aile ortamına taşıdıklarında üst kuşaklarla aralarında kasıtsız bir <em>uzaklaşma (divergence)</em> ve kod açılamayan mesajlar meydana gelir.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Amaç ve Hipotezler -->
+  <section id="hipotezler" class="py-14 px-4 sm:px-6 border-t border-ink/15">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-xs font-bold uppercase tracking-wider text-brick mb-2">02 · Amaç ve Hipotezler</div>
+      <h2 class="font-serif text-2xl sm:text-3xl font-bold mb-3">Üç Adımlı Sosyolengüistik Zincir</h2>
+      <p class="text-sm sm:text-base text-ink/80 max-w-2xl mb-8">
+        Çalışma, ekran süresinden geleneksel söz varlığı kaybına uzanan üç temel hipotezi test eder ve çözüm olarak A4 çift yönlü pratik kavram rehberi üretir.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="bg-paperLight border border-ink/15 rounded-2xl p-6 relative overflow-hidden">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-serif text-2xl font-bold text-brick">H1</span>
+            <span class="text-xs font-mono font-semibold bg-teal/15 text-teal px-2.5 py-1 rounded-full">Kabul · p &lt; 0.001</span>
+          </div>
+          <p class="text-sm sm:text-base font-medium text-ink">
+            Günlük sosyal medya kullanım süresi arttıkça, konuşma dilinde dijital jargon kullanma sıklığı da anlamlı biçimde artar.
+          </p>
+        </div>
+
+        <div class="bg-paperLight border border-ink/15 rounded-2xl p-6 relative overflow-hidden">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-serif text-2xl font-bold text-brick">H2</span>
+            <span class="text-xs font-mono font-semibold bg-teal/15 text-teal px-2.5 py-1 rounded-full">Kabul · r = 0.584</span>
+          </div>
+          <p class="text-sm sm:text-base font-medium text-ink">
+            Jargon kullanımı arttıkça, aile büyükleriyle iletişimde anlaşılamama ve kavramsal kopukluk sıklığı artar.
+          </p>
+        </div>
+
+        <div class="bg-paperLight border border-ink/15 rounded-2xl p-6 relative overflow-hidden">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-serif text-2xl font-bold text-brick">H3</span>
+            <span class="text-xs font-mono font-semibold bg-teal/15 text-teal px-2.5 py-1 rounded-full">Kabul · r = 0.621</span>
+          </div>
+          <p class="text-sm sm:text-base font-medium text-ink">
+            Kuşaklararası iletişim kopukluğu arttıkça, gençlerin geleneksel deyim ve atasözlerine hakimiyeti azalır.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Yöntem ve İş-Zaman Çizelgesi -->
+  <section id="yontem" class="py-14 px-4 sm:px-6 border-t border-ink/15 bg-paperLight/50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-xs font-bold uppercase tracking-wider text-brick mb-2">03 · Yöntem ve Süreç</div>
+      <h2 class="font-serif text-2xl sm:text-3xl font-bold mb-8">Açımlayıcı Sıralı Karma Araştırma Deseni</h2>
+
+      <div class="grid lg:grid-cols-2 gap-8 mb-10">
+        <!-- Örneklem Dağılımı -->
+        <div class="bg-paperLight border border-ink/15 rounded-2xl p-6">
+          <h3 class="font-serif text-lg font-semibold mb-2">Tek Okul Kotalı Örneklem (n = 120)</h3>
+          <p class="text-sm text-ink/80 mb-5">
+            Okul kültürü ve sosyo-ekonomik değişkenleri kontrol altında tutmak için tek bir Anadolu lisesinde her sınıf düzeyinden eşit (%25 / 30 öğrenci) kota uygulandı.
+          </p>
+          <div class="grid grid-cols-4 gap-3 items-end h-32 pt-4">
+            <div class="bg-teal/85 rounded-t-lg h-full flex flex-col justify-between p-2 text-center text-white">
+              <span class="font-mono text-xs font-bold">30</span>
+              <span class="text-xs">9. Sınıf<br>(%25)</span>
+            </div>
+            <div class="bg-teal/85 rounded-t-lg h-full flex flex-col justify-between p-2 text-center text-white">
+              <span class="font-mono text-xs font-bold">30</span>
+              <span class="text-xs">10. Sınıf<br>(%25)</span>
+            </div>
+            <div class="bg-teal/85 rounded-t-lg h-full flex flex-col justify-between p-2 text-center text-white">
+              <span class="font-mono text-xs font-bold">30</span>
+              <span class="text-xs">11. Sınıf<br>(%25)</span>
+            </div>
+            <div class="bg-teal/85 rounded-t-lg h-full flex flex-col justify-between p-2 text-center text-white">
+              <span class="font-mono text-xs font-bold">30</span>
+              <span class="text-xs">12. Sınıf<br>(%25)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Veri Toplama Araçları -->
+        <div class="bg-paperLight border border-ink/15 rounded-2xl p-6 flex flex-col justify-between">
+          <div>
+            <h3 class="font-serif text-lg font-semibold mb-3">Veri Toplama ve Analiz Teknikleri</h3>
+            <ul class="space-y-3 text-sm text-ink/85">
+              <li class="flex items-start gap-2.5">
+                <span class="font-mono font-bold text-brick">01.</span>
+                <span><strong>Nicel Ölçek:</strong> 15 maddelik 5'li Likert ölçeği — 3 alt boyut (Dijital Jargon Kullanımı, Kuşaklararası İletişim Kopukluğu, Geleneksel Söz Varlığına Hakimiyet).</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="font-mono font-bold text-brick">02.</span>
+                <span><strong>Nitel Görüşme:</strong> 10 gönüllü öğrenci ile 10'ar dakikalık yarı yapılandırılmış derinlemesine mülakatlar.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="font-mono font-bold text-brick">03.</span>
+                <span><strong>İstatistik &amp; Kodlama:</strong> Tek Yönlü ANOVA (H1), Pearson Korelasyonu (H2–H3) ve tümevarımsal tematik içerik analizi.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 Haftalık İş-Zaman Çizelgesi -->
+      <div class="bg-paperLight border border-ink/15 rounded-2xl p-5 sm:p-6 overflow-x-auto">
+        <h3 class="font-serif text-lg font-semibold mb-4">6 Haftalık Proje İş-Zaman Çizelgesi</h3>
+        <table class="w-full text-left border-collapse min-w-[600px] text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-ink/15 text-muted">
+              <th class="py-2.5 pr-4 font-semibold">İş Paketi / Faaliyet Adı</th>
+              <th class="py-2.5 px-2 text-center">1. H</th>
+              <th class="py-2.5 px-2 text-center">2. H</th>
+              <th class="py-2.5 px-2 text-center">3. H</th>
+              <th class="py-2.5 px-2 text-center">4. H</th>
+              <th class="py-2.5 px-2 text-center">5. H</th>
+              <th class="py-2.5 px-2 text-center">6. H</th>
+              <th class="py-2.5 pl-4 font-semibold">Sorumlu</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-ink/10">
+            <tr>
+              <td class="py-2.5 pr-4 font-medium">Literatür Taraması ve Ölçek Tasarımı</td>
+              <td class="text-center"><span class="inline-block w-5 h-5 rounded bg-teal text-white font-bold leading-5">✓</span></td>
+              <td></td><td></td><td></td><td></td><td></td>
+              <td class="pl-4 text-muted">1. ve 2. Öğrenci</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 pr-4 font-medium">Okul İzinleri ve Pilot Uygulama (n=10)</td>
+              <td></td>
+              <td class="text-center"><span class="inline-block w-5 h-5 rounded bg-teal text-white font-bold leading-5">✓</span></td>
+              <td></td><td></td><td></td><td></td>
+              <td class="pl-4 text-muted">1. Öğrenci</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 pr-4 font-medium">Nicel Veri Toplama (n=120 Anket)</td>
+              <td></td><td></td>
+              <td class="text-center"><span class="inline-block w-5 h-5 rounded bg-teal text-white font-bold leading-5">✓</span></td>
+              <td></td><td></td><td></td>
+              <td class="pl-4 text-muted">1. Öğrenci</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 pr-4 font-medium">Nitel Görüşmeler (n=10 Öğrenci)</td>
+              <td></td><td></td><td></td>
+              <td class="text-center"><span class="inline-block w-5 h-5 rounded bg-teal text-white font-bold leading-5">✓</span></td>
+              <td></td><td></td>
+              <td class="pl-4 text-muted">2. Öğrenci</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 pr-4 font-medium">SPSS Analizi ve Tematik Kodlama</td>
+              <td></td><td></td><td></td><td></td>
+              <td class="text-center"><span class="inline-block w-5 h-5 rounded bg-brick text-white font-bold leading-5">✓</span></td>
+              <td></td>
+              <td class="pl-4 text-muted">1. ve 2. Öğrenci</td>
+            </tr>
+            <tr>
+              <td class="py-2.5 pr-4 font-medium">Kavram Rehberi Tasarımı ve Raporlama</td>
+              <td></td><td></td><td></td><td></td><td></td>
+              <td class="text-center"><span class="inline-block w-5 h-5 rounded bg-brick text-white font-bold leading-5">✓</span></td>
+              <td class="pl-4 text-muted">1. ve 2. Öğrenci</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bulgular Bölümü -->
+  <section id="bulgular" class="py-14 px-4 sm:px-6 border-t border-ink/15">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-xs font-bold uppercase tracking-wider text-brick mb-2">04 · İstatistiksel Bulgular</div>
+      <h2 class="font-serif text-2xl sm:text-3xl font-bold mb-8">Zincirin Her Halkası Doğrulandı</h2>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- H1 & Korelasyon Zinciri -->
+        <div class="space-y-6">
+          <div class="bg-paperLight border border-ink/15 rounded-2xl p-6">
+            <h3 class="font-serif text-lg font-semibold mb-1">H1 — Kullanım Süresine Göre Jargon Puanı</h3>
+            <p class="text-xs text-muted mb-5">5'li Likert Ölçeği Ortalamaları (Tek Yönlü ANOVA: F = 14.82, p &lt; 0.001)</p>
+
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>1–2 saat/gün kullanım</span>
+                  <span class="font-mono font-semibold text-teal">2.45 / 5.00</span>
+                </div>
+                <div class="w-full h-3.5 bg-paper2 rounded-full overflow-hidden">
+                  <div class="h-full bg-teal rounded-full" style="width: 49%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-sm mb-1">
+                  <span>4+ saat/gün kullanım</span>
+                  <span class="font-mono font-semibold text-brick">4.12 / 5.00</span>
+                </div>
+                <div class="w-full h-3.5 bg-paper2 rounded-full overflow-hidden">
+                  <div class="h-full bg-brick rounded-full" style="width: 82.4%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-paperLight border border-ink/15 rounded-2xl p-6">
+            <h3 class="font-serif text-lg font-semibold mb-3">H2 → H3 Korelasyon Zinciri</h3>
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-xs sm:text-sm font-mono">
+              <div class="w-full sm:w-auto text-center bg-white border border-ink/15 px-3.5 py-2.5 rounded-xl font-semibold">
+                Dijital Jargon
+              </div>
+              <div class="text-brick font-bold">r = 0.584 →</div>
+              <div class="w-full sm:w-auto text-center bg-white border border-ink/15 px-3.5 py-2.5 rounded-xl font-semibold">
+                İletişim Kopukluğu
+              </div>
+              <div class="text-brick font-bold">r = 0.621 →</div>
+              <div class="w-full sm:w-auto text-center bg-white border border-ink/15 px-3.5 py-2.5 rounded-xl font-semibold">
+                Deyim/Atasözü Kaybı
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- En Sık Kullanılan 5 Kelime -->
+        <div class="bg-paperLight border border-ink/15 rounded-2xl p-6">
+          <h3 class="font-serif text-lg font-semibold mb-1">En Sık Kullanılan 5 Dijital Kelime</h3>
+          <p class="text-xs text-muted mb-5">120 öğrencinin açık uçlu yanıtlarındaki kullanım frekansları (f)</p>
+
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="font-mono font-semibold text-teal">cringe</span>
+                <span class="font-mono text-xs text-muted">f = 84 (%70)</span>
+              </div>
+              <div class="w-full h-2.5 bg-paper2 rounded-full overflow-hidden">
+                <div class="h-full bg-teal rounded-full" style="width: 100%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="font-mono font-semibold text-teal">ghostlamak</span>
+                <span class="font-mono text-xs text-muted">f = 67 (%55.8)</span>
+              </div>
+              <div class="w-full h-2.5 bg-paper2 rounded-full overflow-hidden">
+                <div class="h-full bg-teal rounded-full" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="font-mono font-semibold text-teal">stalklamak</span>
+                <span class="font-mono text-xs text-muted">f = 59 (%49.1)</span>
+              </div>
+              <div class="w-full h-2.5 bg-paper2 rounded-full overflow-hidden">
+                <div class="h-full bg-teal rounded-full" style="width: 70%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="font-mono font-semibold text-teal">toxic</span>
+                <span class="font-mono text-xs text-muted">f = 48 (%40)</span>
+              </div>
+              <div class="w-full h-2.5 bg-paper2 rounded-full overflow-hidden">
+                <div class="h-full bg-teal rounded-full" style="width: 57%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span class="font-mono font-semibold text-teal">npc olmak</span>
+                <span class="font-mono text-xs text-muted">f = 38 (%31.6)</span>
+              </div>
+              <div class="w-full h-2.5 bg-paper2 rounded-full overflow-hidden">
+                <div class="h-full bg-teal rounded-full" style="width: 45%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-ink/10 text-xs text-ink/75">
+            <strong>Ek Not (İnfografik Bulgusu):</strong> Günlük konuşmada "random" (%45) ve "cringe" (%38) gibi ifadelerin aile içi iletişimde "O ne demek?" sorusuyla kavramsal kopukluk yarattığı gözlemlenmiştir.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UYGULAMALI ÇIKTI: KAVRAM REHBERİ & EŞLEŞTİRME OYUNU & KONUŞMA ANALİZİ TESTİ -->
+  <section id="rehber-bolumu" class="py-16 px-4 sm:px-6 border-t-2 border-ink/20 bg-paper2/45">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <div class="text-xs font-bold uppercase tracking-wider text-brick mb-2">05 · Uygulamalı Proje Çıktısı (Ek 3 Genişletilmiş Sürüm)</div>
+          <h2 class="font-serif text-2xl sm:text-4xl font-bold">Kuşaklararası Kavram Rehberi &amp; Konuşma Analizi</h2>
+          <p class="text-sm sm:text-base text-ink/80 max-w-2xl mt-2">
+            Sosyal medyada yaygın kullanılan <span class="font-mono font-bold text-teal" id="total-term-badge">70</span> dijital ifadeyi geleneksel Türkçe deyim ve karşılıklarıyla keşfedin, eşleştirme oyununu oynayın veya kendi cümlelerinizi analiz edin.
+          </p>
+        </div>
+      </div>
+
+      <!-- Ana Mod Sekmeleri -->
+      <div class="flex flex-wrap gap-2.5 mb-8">
+        <button type="button" class="tab-btn active px-5 py-2.5 rounded-full text-sm font-semibold border border-ink bg-ink text-paper transition-all cursor-pointer" data-view="cards">
+          🗂️ Kavram Kartları (70 Terim)
+        </button>
+        <button type="button" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold border border-ink/20 bg-paperLight text-ink hover:border-ink transition-all cursor-pointer" data-view="quiz">
+          🎯 Eşleştirme Oyunu
+        </button>
+        <button type="button" class="tab-btn px-5 py-2.5 rounded-full text-sm font-semibold border border-ink/20 bg-paperLight text-ink hover:border-ink transition-all cursor-pointer" data-view="analiz">
+          🔍 Konuşma Analizi Testi
+        </button>
+      </div>
+
+      <!-- GÖRÜNÜM 1: KAVRAM KARTLARI -->
+      <div id="view-cards" class="view block">
+        <!-- Kendi Terimini Ekle Açılır Kutu -->
+        <details class="suggest bg-paperLight border border-dashed border-ink/30 rounded-2xl p-4 sm:p-5 mb-6">
+          <summary class="cursor-pointer font-semibold text-sm text-ink select-none flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-teal text-white inline-flex items-center justify-center font-bold text-base">+</span>
+            <span>Rehbere Kendi Terimini Ekle</span>
+          </summary>
+          <form id="suggest-form" class="grid sm:grid-cols-2 gap-3.5 mt-4 pt-4 border-t border-ink/10">
+            <div>
+              <label for="f-term" class="block text-xs font-medium text-muted mb-1">Dijital İfade *</label>
+              <input id="f-term" type="text" placeholder="örn. bestielemek" required class="w-full px-3 py-2 rounded-xl border border-ink/20 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal">
+            </div>
+            <div>
+              <label for="f-trad" class="block text-xs font-medium text-muted mb-1">Geleneksel Türkçe Karşılığı *</label>
+              <input id="f-trad" type="text" placeholder="örn. can ciğer kuzu sarması olmak" required class="w-full px-3 py-2 rounded-xl border border-ink/20 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal">
+            </div>
+            <div class="sm:col-span-2">
+              <label for="f-meaning" class="block text-xs font-medium text-muted mb-1">Gençlerin Kullanım Amacı *</label>
+              <textarea id="f-meaning" rows="2" placeholder="Bu ifade hangi anlamda kullanılıyor?" required class="w-full px-3 py-2 rounded-xl border border-ink/20 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal"></textarea>
+            </div>
+            <div>
+              <label for="f-elder" class="block text-xs font-medium text-muted mb-1">Aile Büyüğünün Olası Yanlış Anlaması</label>
+              <input id="f-elder" type="text" placeholder="Bir büyük bunu duysa ne sanır?" class="w-full px-3 py-2 rounded-xl border border-ink/20 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal">
+            </div>
+            <div>
+              <label for="f-tip" class="block text-xs font-medium text-muted mb-1">İletişim Uyum İpucu</label>
+              <input id="f-tip" type="text" placeholder="Kuşaklararası köprü kuracak kısa öneri" class="w-full px-3 py-2 rounded-xl border border-ink/20 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal">
+            </div>
+            <div class="sm:col-span-2 flex flex-wrap items-center justify-between gap-3 pt-1">
+              <span class="text-xs text-muted">Eklenen terimler bu oturum boyunca rehberde ve analiz testinde aktif olur.</span>
+              <button type="submit" class="bg-teal text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-teal/90 transition-colors cursor-pointer">
+                Rehbere Ekle
+              </button>
+            </div>
+          </form>
+        </details>
+
+        <!-- Arama ve Kategori Filtreleri -->
+        <div class="mb-4">
+          <input id="search" type="text" placeholder="Kelime, deyim veya anlam ara… (örn. cringe, ghost, yerin dibine geçmek)" class="w-full px-4 py-3 rounded-xl border border-ink/20 bg-paperLight text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-teal shadow-sm">
+        </div>
+
+        <div id="cat-pills" class="flex flex-wrap gap-2 mb-4"></div>
+        <div id="result-note" class="text-xs text-muted mb-4"></div>
+
+        <!-- Kart Izgarası -->
+        <div id="card-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5"></div>
+      </div>
+
+      <!-- GÖRÜNÜM 2: EŞLEŞTİRME OYUNU -->
+      <div id="view-quiz" class="view hidden">
+        <div class="max-w-xl mx-auto bg-paperLight border border-ink/15 rounded-2xl p-6 sm:p-8 shadow-sm">
+          <div class="text-xs font-semibold uppercase tracking-wider text-muted mb-1">Kuşaklararası Sözlük Testi</div>
+          <p class="text-sm text-ink/80 mb-4">Bu dijital ifadenin geleneksel Türkçe karşılığı hangisidir?</p>
+
+          <div class="bg-white border border-ink/10 rounded-xl p-4 mb-5 text-center">
+            <span id="q-term" class="font-mono text-2xl sm:text-3xl font-bold text-teal"></span>
+          </div>
+
+          <div id="q-options" class="grid gap-2.5"></div>
+
+          <div class="flex items-center justify-between mt-6 pt-4 border-t border-ink/15">
+            <span id="q-score" class="font-mono text-sm font-semibold text-ink">Skor: 0 / 0</span>
+            <button id="q-next" type="button" disabled class="bg-ink text-paper px-5 py-2.5 rounded-xl text-sm font-semibold disabled:opacity-40 cursor-pointer disabled:cursor-default hover:bg-brick transition-colors">
+              Sonraki Soru →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- GÖRÜNÜM 3: KONUŞMA ANALİZİ TESTİ -->
+      <div id="view-analiz" class="view hidden">
+        <div class="bg-paperLight border border-ink/15 rounded-2xl p-6 sm:p-8 shadow-sm">
+          <div class="max-w-2xl mb-6">
+            <h3 class="font-serif text-xl font-bold mb-2">Kendi Konuşma Dilini Test Et</h3>
+            <p class="text-sm text-ink/80">
+              Aşağıdaki soruları günlük hayatta arkadaşlarınla konuştuğun doğal üslupla yanıtla. Sistem yazdığın metindeki dijital jargonları tespit edecek ve aile büyüklerinin kolayca anlayabileceği <strong>geleneksel Türkçe karşılıklarına</strong> dönüştürecek.
+            </p>
+          </div>
+
+          <form id="test-form" class="space-y-4">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="q1" class="block text-sm font-semibold mb-1.5">1. Bugünün nasıl geçtiğini bir arkadaşına anlatır gibi yaz.</label>
+                <textarea id="q1" rows="3" placeholder="Örn: Bugün okulda resmen cringe oldum, çok toxic bir ortamdı..." class="w-full p-3 rounded-xl border border-ink/20 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal"></textarea>
+              </div>
+              <div>
+                <label for="q2" class="block text-sm font-semibold mb-1.5">2. Sosyal medyada bugün gördüğün bir şeyi anlat, ne hissettin?</label>
+                <textarea id="q2" rows="3" placeholder="Örn: Az önce bir reels gördüm, hemen story attım..." class="w-full p-3 rounded-xl border border-ink/20 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal"></textarea>
+              </div>
+              <div>
+                <label for="q3" class="block text-sm font-semibold mb-1.5">3. Ailenle ya da bir büyüğünle aranda geçen bir iletişim anısını paylaş.</label>
+                <textarea id="q3" rows="3" placeholder="Örn: Anneanneme arkadaşım beni ghostladı dedim, o da..." class="w-full p-3 rounded-xl border border-ink/20 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal"></textarea>
+              </div>
+              <div>
+                <label for="q4" class="block text-sm font-semibold mb-1.5">4. Bir arkadaşınla yaşadığın komik ya da ilginç bir durumu anlat.</label>
+                <textarea id="q4" rows="3" placeholder="Örn: Geçen gün hesabını stalklarken yakalandım, mood'um kaçtı..." class="w-full p-3 rounded-xl border border-ink/20 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-teal"></textarea>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2">
+              <button type="submit" class="bg-brick text-white px-6 py-3 rounded-xl text-sm font-semibold hover:bg-brick/90 transition-colors cursor-pointer shadow-sm">
+                Dilimi Analiz Et
+              </button>
+              <button type="button" id="fill-demo-btn" class="bg-teal/15 text-teal border border-teal/30 px-4 py-3 rounded-xl text-sm font-semibold hover:bg-teal/25 transition-colors cursor-pointer">
+                Örnek Metin Doldur
+              </button>
+              <button type="button" id="test-reset" class="px-4 py-3 rounded-xl text-sm font-semibold text-muted border border-ink/20 hover:bg-paper transition-colors cursor-pointer">
+                Temizle
+              </button>
+            </div>
+          </form>
+
+          <!-- Analiz Sonuç Paneli -->
+          <div id="result-wrap" class="hidden mt-8 pt-6 border-t border-ink/15">
+            <div class="flex flex-wrap items-baseline gap-2.5 mb-4">
+              <span id="r-count" class="font-serif text-3xl sm:text-4xl font-bold text-brick">0</span>
+              <span class="text-base font-medium">farklı dijital ifade tespit edildi.</span>
+            </div>
+
+            <div id="r-chips" class="flex flex-wrap gap-2 mb-5"></div>
+
+            <div id="r-empty" class="hidden bg-white border border-teal/30 rounded-xl p-4 text-sm text-teal font-medium mb-5">
+              Metninde tespit edilen bir dijital ifade yok — günlük dilin oldukça geleneksel görünüyor!
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <div class="bg-white border border-ink/15 rounded-2xl p-5">
+                <div class="text-xs font-bold uppercase tracking-wider text-muted mb-2">Yazdığınız Orijinal Metin</div>
+                <div id="r-original" class="text-sm whitespace-pre-wrap leading-relaxed"></div>
+              </div>
+              <div class="bg-white border-2 border-teal rounded-2xl p-5">
+                <div class="text-xs font-bold uppercase tracking-wider text-teal mb-2">Geleneksel Türkçeye Çevrilmiş Hali</div>
+                <div id="r-edited" class="text-sm whitespace-pre-wrap leading-relaxed font-medium"></div>
+              </div>
+            </div>
+
+            <p class="text-xs text-muted mt-4 leading-relaxed">
+              Not: Bu analiz, Kavram Rehberi'ndeki ifadeler üzerinden çalışan anahtar kelime eşleştirmesine dayanır. Amaç dilbilgisel kusursuzluktan ziyade, günlük konuşmadaki dijital kodların geleneksel karşılıklarına dair farkındalık yaratmaktır.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kaynakça -->
+  <section id="kaynaklar" class="py-14 px-4 sm:px-6 border-t border-ink/15">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-xs font-bold uppercase tracking-wider text-brick mb-2">06 · Akademik Kaynakça</div>
+      <h2 class="font-serif text-2xl font-bold mb-6">Yararlanılan Kaynaklar</h2>
+      <div class="grid md:grid-cols-2 gap-x-10 gap-y-3 text-xs sm:text-sm text-ink/85">
+        <p>Bezgin, R., &amp; Çelik, R. (2026). Gençlerin dijital ortamda maruz kaldıkları argo ve küfür içeriklerinin dil kullanımına yansımaları. <em>Alınteri Sosyal Bilimler Dergisi</em>, 10(1), 1–12.</p>
+        <p>Giles, H. (2016). <em>Communication Accommodation Theory</em>. Cambridge University Press.</p>
+        <p>Göksel, A., &amp; Arıcı, A. F. (2021). Çağdaş çocuk kitaplarında aile büyüklerinin sunuluş biçimleri. <em>Dil ve Edebiyat Araştırmaları</em>, 23, 147–178.</p>
+        <p>Kumral, O. (2021). Dijital yerlilerin gözünden dijital okuryazarlık. <em>PAÜ Sosyal Bilimler Enstitüsü Dergisi</em>, 48, 617–638.</p>
+        <p>Somera, L., &amp; Dal, F. (2013). Online intergenerational communication. <em>Journal of Intercultural Communication Research</em>, 42(3), 215–234.</p>
+        <p>Sökmen, İ., &amp; Karadeniz Meydan, K. (2025). Sosyal medya dili üzerine. <em>IJENA</em>, 8(2), 235–247.</p>
+        <p>Urhan Torun, B. (2018). Z kuşağının emoji kullanma eğilimleri. <em>TRT Akademi</em>, 3(6), 614–630.</p>
+        <p>Yıldız, G. (2026). Şeffaf duvarlar. <em>İletişim Bilimi Araştırmaları Dergisi</em>, 6(2), 163–179.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alt Bilgi & Yapay Zeka Beyanı -->
+  <footer class="py-10 px-4 sm:px-6 border-t border-ink/15 bg-paperLight">
+    <div class="max-w-6xl mx-auto">
+      <div class="border border-dashed border-ink/25 rounded-2xl p-5 bg-paper/60 text-xs sm:text-sm text-ink/80 leading-relaxed">
+        <strong class="text-ink block mb-1">Yapay Zekâ Araçları Kullanım Beyanı (TÜBİTAK 2204-A 2026–2027 Şablonu):</strong>
+        Kullanılan Araçlar: Gemini (Google) &amp; Python 3.12 (Kasım 2026). Literatür taraması, istatistiksel analiz kurgusu, rapor taslağı yapılandırma ve kavram matrisi oluşturma aşamalarında destek alınmıştır. Üretilen içeriklerin %100'ü araştırmacı lise öğrenci ekibi ve proje danışmanı tarafından doğrulanmış, düzenlenmiş ve akademik özgünlük kazandırılmıştır.
+      </div>
+      <div class="mt-4 text-center text-xs text-muted">
+        TÜBİTAK 2204-A Lise Öğrencileri Araştırma Projeleri Yarışması · Sosyoloji Alanı
+      </div>
+    </div>
+  </footer>
+
+  <!-- Uygulama Mantığı (70 Kavram Verisi, Kart Çevirme, Eşleştirme Oyunu ve Konuşma Analizi) -->
+  <script>
+    const CATS = {
+      fiil: "Fiilleşen Terimler",
+      duygu: "Duygu ve Durum",
+      platform: "Platform Eylemleri",
+      tip: "Kişilik Nitelemeleri",
+      unlem: "Ünlem ve Jargon",
+      oneri: "Sizin Önerileriniz"
+    };
+
+    const TERMS = [
+      // --- Fiilleşen Terimler (14) ---
+      { cat:"fiil", term:"ghostlamak", meaning:"İletişimi aniden ve habersizce kesmek, yanıt vermemek.", elder:"Sihirli/hayaletli bir olay olarak yorumlama.", trad:"izi tozu silinmek", tip:"İletişim etiği üzerine karşılıklı sohbet edilmelidir.", patterns:["ghostl"] },
+      { cat:"fiil", term:"stalklamak", meaning:"Biri hakkında gizlice bilgi toplamak, hesabını incelemek.", elder:"Erzak stoklamak veya depo yapmak sanma.", trad:"göz hapsine almak", tip:"Merak duygusunun mahremiyet sınırları tartışılmalıdır.", patterns:["stalkl"] },
+      { cat:"fiil", term:"trollemek", meaning:"Birini kafa bularak kızdırmak, şakayla kışkırtmak.", elder:"Masal canavarıyla (trol) karıştırma.", trad:"dalga geçmek", tip:"Şaka ile kırıcılık arasındaki sınır konuşulmalıdır.", patterns:["troll"] },
+      { cat:"fiil", term:"flexlemek", meaning:"Sahip olunan bir şeyle övünmek, çalım satmak.", elder:"Bir spor/esneme hareketi sanma.", trad:"çalım satmak", tip:"Övünme ile paylaşma arasındaki fark konuşulmalıdır.", patterns:["flex"] },
+      { cat:"fiil", term:"vibe'lamak", meaning:"Bir ana veya ruh haline kolayca uyum sağlamak.", elder:"Titreşimle ilgili bir şey sanma.", trad:"haline bürünmek", tip:"\"Vibe\" yerine \"hava/his\" kelimeleri önerilebilir.", patterns:["vibe"] },
+      { cat:"fiil", term:"gaslightlemek", meaning:"Birinin algısıyla oynayıp kendinden şüphe ettirmek.", elder:"Gazla ilgili bir arıza sanma.", trad:"zihin bulandırmak", tip:"Gerçek psikolojik manipülasyon örnekleriyle anlatılmalıdır.", patterns:["gaslight"] },
+      { cat:"fiil", term:"cakalamak", meaning:"Hava atmak, bilgiçlik taslamak.", elder:"Bir hayvan adıyla (çaka) karıştırma.", trad:"ukalalık etmek", tip:"Kendine güvenle kibir arasındaki fark konuşulmalıdır.", patterns:["cakal"] },
+      { cat:"fiil", term:"mute'lamak", meaning:"Birini/bir konuyu sessize alıp görmezden gelmek.", elder:"\"Mut\" kelimesini mutluluk sanma.", trad:"duymazdan gelmek", tip:"Görmezden gelmenin iletişimi nasıl etkilediği konuşulmalıdır.", patterns:["mute"] },
+      { cat:"fiil", term:"bloklamak", meaning:"Birini bir hesaba erişimden tamamen engellemek.", elder:"\"Blok\" kelimesini bina bloğu sanma.", trad:"kapıyı yüzüne kapamak", tip:"Engellemenin bir çözüm mü yoksa kaçış mı olduğu konuşulmalıdır.", patterns:["blokl"] },
+      { cat:"fiil", term:"editlemek", meaning:"Bir fotoğraf veya videoyu düzenlemek.", elder:"Yayıncılıktaki \"editör\" kelimesiyle karıştırma.", trad:"rötuş yapmak", tip:"Düzenlenmiş görüntüyle gerçeğin farkı anlatılmalıdır.", patterns:["editl"] },
+      { cat:"fiil", term:"quote'lamak", meaning:"Bir paylaşımı alıntılayıp üstüne kendi yorumunu eklemek.", elder:"\"Kot\" (pantolon) kelimesiyle karıştırma.", trad:"lafını alıp üstüne konuşmak", tip:"Alıntının bağlamından koparılmaması gerektiği anlatılmalıdır.", patterns:["quote"] },
+      { cat:"fiil", term:"reposlamak", meaning:"Başkasının paylaşımını kendi hesabından tekrar yayınlamak.", elder:"\"Repo\" kelimesini depo/ambar sanma.", trad:"ağızdan ağıza yaymak", tip:"Kaynağı belirtmenin önemi anlatılabilir.", patterns:["repost","reposl"] },
+      { cat:"fiil", term:"pinlemek", meaning:"Bir içeriği profilde veya sohbette en üstte sabit tutmak.", elder:"\"Pin\" kelimesini toplu iğne sanma.", trad:"baş köşeye koymak", tip:"Neyin öne çıkarılacağının bir tercih olduğu anlatılabilir.", patterns:["pinle"] },
+      { cat:"fiil", term:"swipe'lamak", meaning:"Bir profili veya içeriği hızlıca kaydırıp geçmek.", elder:"\"Swipe\" kelimesini kart okutma işlemiyle karıştırma.", trad:"göz ucuyla bakıp geçmek", tip:"Hızlı yargılamanın insan ilişkilerinde risk taşıdığı konuşulmalıdır.", patterns:["swipe"] },
+
+      // --- Duygu ve Durum (14) ---
+      { cat:"duygu", term:"cringe olmak", meaning:"Başkasının yaptığı utanç verici bir durumdan rahatsız olma.", elder:"Sağlık sorunu veya fiziksel kramp sanma.", trad:"yerin dibine geçmek", tip:"Genç durumu izah etmeli, ebeveyn abartılı tepki göstermemelidir.", patterns:["cringe"] },
+      { cat:"duygu", term:"toxic olmak", meaning:"Huzursuzluk veren, olumsuz ve yıpratıcı bir kişi/ortam olma.", elder:"Kimyasal zehirlenme ile karıştırma.", trad:"huzur kaçıran", tip:"Olumsuz davranışın hissettirdiği duygu açıkça paylaşılmalıdır.", patterns:["toxic","toksik"] },
+      { cat:"duygu", term:"salty olmak", meaning:"Küçük bir şeye içerleyip küsmek.", elder:"Tuzlu yemekle ilgili sanma.", trad:"içine atmak", tip:"Kızgınlığın gerçek nedeni açıkça sorulmalıdır.", patterns:["salty"] },
+      { cat:"duygu", term:"delulu olmak", meaning:"Gerçekçi olmayan bir beklenti veya hayal kurmak.", elder:"Ciddi bir rahatsızlık sanma.", trad:"hülyaya kapılmak", tip:"Şaka ile ciddiyet ayrımı birlikte yapılmalıdır.", patterns:["delulu"] },
+      { cat:"duygu", term:"fomo yaşamak", meaning:"Bir şeyi kaçırma korkusuyla huzursuz olma.", elder:"\"Fomo\" diye bir hastalık sanma.", trad:"kervana geç kalma korkusu", tip:"Sosyal medya kıyaslamasının etkisi konuşulmalıdır.", patterns:["fomo"] },
+      { cat:"duygu", term:"mood'u kaçmak", meaning:"Keyfinin veya havasının bozulması.", elder:"\"Mod\" kelimesini telefon moduyla karıştırma.", trad:"keyfi kaçmak", tip:"Neyin keyfi bozduğu sakince sorulmalıdır.", patterns:["mood"] },
+      { cat:"duygu", term:"aura kaybetmek", meaning:"Havalı/etkileyici duruşunu şakayla yitirme.", elder:"Enerji veya ışık kaybı gibi mistik bir şey sanma.", trad:"itibarı sarsılmak", tip:"Bu ifadenin genelde şaka amaçlı kullanıldığı anlatılmalıdır.", patterns:["aura"] },
+      { cat:"duygu", term:"burnout olmak", meaning:"Okul/sosyal medya temposundan tükenmişlik yaşamak.", elder:"Yanma veya yanık olayıyla karıştırma.", trad:"candan bezmek", tip:"Gerçek yorgunluğun ciddiye alınması gerektiği anlatılmalıdır.", patterns:["burnout"] },
+      { cat:"duygu", term:"overthink etmek", meaning:"Bir konuyu gereğinden fazla düşünüp kafaya takmak.", elder:"\"Over\" ve \"think\" kelimelerini ayrı ayrı anlamama.", trad:"kafayı takmak", tip:"Endişenin paylaşılmasının rahatlatıcı olduğu anlatılmalıdır.", patterns:["overthink"] },
+      { cat:"duygu", term:"hype yapmak", meaning:"Bir şey için aşırı heyecanlanmak veya heyecanlandırmak.", elder:"\"Hayp\" diye bir kelime bilmeme.", trad:"heyecana kapılmak", tip:"Gerçek beklentiyle abartı arasındaki fark konuşulmalıdır.", patterns:["hype"] },
+      { cat:"duygu", term:"zen olmak", meaning:"Hiçbir şeyin etkilemediği, aşırı sakin bir tavır takınmak.", elder:"Dini/felsefi bir uygulama (zen Budizmi) sanma.", trad:"taş gibi sakin olmak", tip:"Sakinliğin ilgisizlikle karıştırılmaması gerektiği anlatılmalıdır.", patterns:["zen"], strict:true },
+      { cat:"duygu", term:"unhinged olmak", meaning:"Şakayla, kontrolsüz ve tahmin edilemez biçimde davranmak.", elder:"Ciddi bir akıl sağlığı sorunu sanma.", trad:"zıvanadan çıkmak", tip:"Şakanın ciddi bir duruma karıştırılmaması gerektiği anlatılmalıdır.", patterns:["unhinged"] },
+      { cat:"duygu", term:"lowkey/highkey hissetmek", meaning:"Bir şeyi üstü kapalı (lowkey) ya da açıkça (highkey) ifade etmek.", elder:"\"Key\" kelimesini anahtar sanma.", trad:"aslında içten içe / açık açık", tip:"Duyguyu doğrudan ifade etmenin de bir seçenek olduğu hatırlatılmalıdır.", patterns:["lowkey","highkey"] },
+      { cat:"duygu", term:"ick almak", meaning:"Birine duyulan ilginin bir davranış yüzünden aniden kaybolması.", elder:"\"Ick\" diye bir kelime duymama, iğrenme sesi sanma.", trad:"soğumak / içinden geçmek", tip:"Küçük davranışların büyük etki yaratabileceği konuşulmalıdır.", patterns:["ick al","ick yaş"] },
+
+      // --- Platform Eylemleri (14) ---
+      { cat:"platform", term:"story atmak", meaning:"Hesapta 24 saatlik geçici paylaşım yapmak.", elder:"Hikaye/masal anlatma sanma.", trad:"haber salmak", tip:"Paylaşımın geçiciliği açıklanmalıdır.", patterns:["story"] },
+      { cat:"platform", term:"dm atmak", meaning:"Özelden/gizli mesaj göndermek.", elder:"\"DM\" kısaltmasını hiç bilmeme.", trad:"kulağına fısıldamak", tip:"Kısaltmanın açılımı birlikte öğrenilebilir.", patterns:["dm"], strict:true },
+      { cat:"platform", term:"tag'lemek", meaning:"Bir gönderide birinin adını/hesabını etiketlemek.", elder:"Fiziksel bir etiket yapıştırma sanma.", trad:"ismini anmak", tip:"Etiketlenmenin bildirim gönderdiği anlatılmalıdır.", patterns:["tag"], strict:true },
+      { cat:"platform", term:"unfollow etmek", meaning:"Bir hesabı takipten çıkmak.", elder:"Birini fiziksel olarak takip etmeyi bırakma sanma.", trad:"sırt çevirmek", tip:"Takipten çıkmanın her zaman küsme anlamına gelmeyebileceği konuşulmalıdır.", patterns:["unfollow"] },
+      { cat:"platform", term:"ban yemek", meaning:"Bir platformdan veya gruptan men edilmek.", elder:"\"Ban\" kelimesini hiç tanımama.", trad:"kapı dışarı edilmek", tip:"Kuralların neden önemli olduğu anlatılmalıdır.", patterns:["ban"], strict:true },
+      { cat:"platform", term:"cook etmek", meaning:"Bir şeyi (bir içeriği, bir repliği, bir fikri) etkileyici şekilde başarmak.", elder:"Mutfakta yemek pişirmekle karıştırma.", trad:"işin ehli olmak", tip:"Takdirin sözle de ifade edilebileceği gösterilmelidir.", patterns:["cook"], strict:true },
+      { cat:"platform", term:"viral olmak", meaning:"Bir içeriğin hızla ve çok sayıda paylaşılması.", elder:"Bir hastalığa (virüs) yakalanma sanma.", trad:"dilden dile dolaşmak", tip:"\"Viral\" ile \"virüslü\" kelimelerinin farkı açıklanmalıdır.", patterns:["viral"] },
+      { cat:"platform", term:"scroll etmek", meaning:"Telefon ekranında içerik kaydırarak gezinmek.", elder:"\"Skroll\" kelimesini hiç tanımama.", trad:"göz gezdirmek", tip:"Ekran süresi konusu birlikte konuşulabilir.", patterns:["scroll"] },
+      { cat:"platform", term:"algoritmaya düşmek", meaning:"Bir içeriğin platform tarafından çok kişiye gösterilmesi.", elder:"Teknik bir arıza sanma.", trad:"kısmetine çıkmak", tip:"Algoritmanın ne olduğu basitçe anlatılabilir.", patterns:["algoritma"] },
+      { cat:"platform", term:"live atmak", meaning:"Anlık/canlı video yayını başlatmak.", elder:"Televizyon canlı yayınıyla karıştırma.", trad:"meydana çıkmak", tip:"Anlık paylaşımın geri alınamayacağı anlatılmalıdır.", patterns:["live"], strict:true },
+      { cat:"platform", term:"reels çekmek", meaning:"Kısa, dikey formatlı video içerik üretmek.", elder:"\"Reels\" kelimesini makara/iplik sanma.", trad:"kısa gösteri hazırlamak", tip:"İçerik üretiminin zaman aldığı anlatılabilir.", patterns:["reels","reel"], strict:true },
+      { cat:"platform", term:"highlight'a eklemek", meaning:"Geçici bir hikayeyi profilde kalıcı bir albüme eklemek.", elder:"\"Haylayt\" kelimesini vurgu kalemiyle (highlighter) karıştırma.", trad:"sergiye koymak", tip:"Neyin kalıcı gösterileceğinin bir tercih olduğu anlatılabilir.", patterns:["highlight"] },
+      { cat:"platform", term:"linki bio'ya koymak", meaning:"Önemli bir bağlantıyı profil açıklamasına eklemek.", elder:"\"Bio\" kelimesini biyoloji dersiyle karıştırma.", trad:"kapıya tabela asmak", tip:"Profil bilgisinin bir çeşit tanıtım panosu olduğu anlatılabilir.", patterns:["bio'ya link","link bio","bio linki"] },
+      { cat:"platform", term:"arşivlemek", meaning:"Bir paylaşımı silmeden profil görünürlüğünden kaldırmak.", elder:"Resmi devlet arşiviyle karıştırma.", trad:"sandığa kaldırmak", tip:"Silmekle gizlemek arasındaki farkın bir tercih meselesi olduğu anlatılabilir.", patterns:["arşivle"] },
+
+      // --- Kişilik Nitelemeleri (14) ---
+      { cat:"tip", term:"npc olmak", meaning:"Bir video oyunu figüranı (NPC) gibi; robotik, tepkisiz ve hep aynı şeyi tekrar eden biri gibi davranmak.", elder:"Tıbbi bir hastalık veya terim zannetme.", trad:"taş kesilmek", tip:"Tepkisizliğin bazen ilgisizlik değil dalgınlık olabileceği hatırlatılmalıdır.", patterns:["npc"], strict:true },
+      { cat:"tip", term:"simp olmak", meaning:"Birine aşırı ilgi gösterip sürekli peşinden koşmak.", elder:"\"Simp\" kelimesini hiç tanımama.", trad:"aşkın kulu kölesi olmak", tip:"Sağlıklı ilgi ile aşırılık arasındaki fark konuşulmalıdır.", patterns:["simp"], strict:true },
+      { cat:"tip", term:"sigma olmak", meaning:"Kalabalıktan bağımsız, kendi yolunda giden tip (şakalı kullanım).", elder:"Matematik/fizikteki sigma harfiyle karıştırma.", trad:"kendi yağıyla kavrulmak", tip:"Bunun ciddi bir kimlik değil, internet esprisi olduğu anlatılmalıdır.", patterns:["sigma"] },
+      { cat:"tip", term:"main character gibi davranmak", meaning:"Kendini bir filmin baş kahramanı gibi görmek.", elder:"Gerçekten oyunculuk yaptığını sanma.", trad:"kendini bir şey sanmak", tip:"Özgüvenle kibir arasındaki çizgi konuşulmalıdır.", patterns:["main character"] },
+      { cat:"tip", term:"based olmak", meaning:"Kendi fikrini cesurca savunan, dürüst bulunan kişi.", elder:"\"Bazlı\" kelimesiyle karıştırma.", trad:"dik durmak", tip:"Hangi davranışın \"based\" sayıldığı birlikte tartışılmalıdır.", patterns:["based"], strict:true },
+      { cat:"tip", term:"alfa/beta tipi olmak", meaning:"Baskın/çekingen kişilik tipleriyle şakalı etiketleme.", elder:"Hayvanlar aleminden bir terim sanma.", trad:"baş olan / peşinden gidilen", tip:"İnsanları kategoriye sokmanın sakıncaları konuşulmalıdır.", patterns:["alfa tip","beta tip","alfa erkek","beta erkek"] },
+      { cat:"tip", term:"people pleaser olmak", meaning:"Herkesi memnun etmeye çalışan, hayır diyemeyen kişi.", elder:"Kelimeleri hiç tanımama.", trad:"herkesin gönlünü hoş tutmaya çalışmak", tip:"Sınır koymanın önemi anlatılmalıdır.", patterns:["people pleaser"] },
+      { cat:"tip", term:"clout peşinde koşmak", meaning:"Ün, itibar veya takipçi için hareket etmek.", elder:"\"Klaut\" kelimesini bulut (cloud) ile karıştırma.", trad:"nam salmaya çalışmak", tip:"Gerçek değerle gösterişin farkı konuşulmalıdır.", patterns:["clout"], strict:true },
+      { cat:"tip", term:"soft launch etmek", meaning:"Bir ilişkiyi sosyal medyada üstü kapalı duyurmak.", elder:"Roket/uçak fırlatmasıyla karıştırma.", trad:"üstü kapalı duyurmak", tip:"Mahremiyetin kademeli paylaşımı konuşulmalıdır.", patterns:["soft launch"] },
+      { cat:"tip", term:"toxic positivity yapan biri olmak", meaning:"Her durumu zorla pozitife çevirmeye çalışan kişi.", elder:"Hiç duymadığı, karmaşık bulduğu bir tabir.", trad:"su koyvermemek", tip:"Gerçek duyguların bastırılmaması gerektiği anlatılmalıdır.", patterns:["toxic positivity"] },
+      { cat:"tip", term:"drama queen olmak", meaning:"Her şeyi abartarak, teatral biçimde anlatan kişi.", elder:"Gerçekten tiyatro oyuncusu sanma.", trad:"yangından mal kaçırırcasına anlatmak", tip:"Abartının bazen sadece anlatım tarzı olduğu konuşulabilir.", patterns:["drama queen"] },
+      { cat:"tip", term:"gatekeeping yapmak", meaning:"Sevdiği bir şeyi \"benim\" diyerek başkalarıyla paylaşmaktan kaçınmak.", elder:"Gerçek kapıcılık/bekçilikle karıştırma.", trad:"kıskançlıkla elinde tutmak", tip:"Paylaşmanın bir şeyin değerini azaltmayacağı anlatılabilir.", patterns:["gatekeep"] },
+      { cat:"tip", term:"attention seeker olmak", meaning:"Sürekli ilgi çekmeye çalışan kişi.", elder:"Kelimeleri hiç tanımama.", trad:"göz boyamak / meydanı boş bulmak", tip:"İlgi ihtiyacının normal, ancak dozunun önemli olduğu konuşulabilir.", patterns:["attention seeker"] },
+      { cat:"tip", term:"wannabe olmak", meaning:"Beğendiği birine özenip onun gibi olmaya çalışan kişi.", elder:"Anlamsız bir ses kümesi sanma.", trad:"özentilik etmek", tip:"Kendi kimliğini bulmanın önemi anlatılabilir.", patterns:["wannabe"] },
+
+      // --- Ünlem ve Jargon (14) ---
+      { cat:"unlem", term:"no cap", meaning:"Söylenenin doğru/samimi olduğunu vurgulama.", elder:"\"Cap\" (şapka) kelimesiyle karıştırma.", trad:"vallahi billahi", tip:"Vurgu ihtiyacının Türkçede de karşılığı olduğu gösterilmelidir.", patterns:["no cap"] },
+      { cat:"unlem", term:"cap atmak", meaning:"Yalan söylemek, abartmak.", elder:"Şapka (cap) ile ilgili bir şey sanma.", trad:"martaval okumak", tip:"\"Cap\" ile \"gerçek\" ayrımı espriyle anlatılmalıdır.", patterns:["cap"], strict:true },
+      { cat:"unlem", term:"w/l almak", meaning:"Bir başarıyı (w) ya da başarısızlığı (l) kısaca ifade etme.", elder:"Tek harfin anlamını çözememe.", trad:"zafer kazanmak / yüzü kara çıkmak", tip:"Kısaltmaların oyun kültüründen geldiği anlatılabilir.", patterns:["w","l"], strict:true },
+      { cat:"unlem", term:"ok boomer demek", meaning:"Kendini anlamadığını düşündüğü bir büyüğün sözünü alaycı şekilde geçiştirmek.", elder:"\"Boomer\" kelimesini doğrudan bir hakaret olarak algılama.", trad:"sen eski kafalısın demek", tip:"Bu tabirin de tıpkı gençlerin jargonu gibi karşı tarafı dinlemeyi zorlaştırdığı konuşulmalıdır.", patterns:["ok boomer"] },
+      { cat:"unlem", term:"skibidi", meaning:"Mizahi/anlamsız biçimde her şeye yapıştırılan bir sıfat.", elder:"Hiçbir anlam ifade etmediği için tedirgin olma.", trad:"zırva", tip:"İnternet esprilerinin hızlı tükendiği, kalıcı olmadığı anlatılmalıdır.", patterns:["skibidi"] },
+      { cat:"unlem", term:"rizz'i olmak", meaning:"Karşı cinsle iletişimde çekicilik/laf ustalığına sahip olma.", elder:"\"Riz\" kelimesini pirinç (rice) ile karıştırma.", trad:"gönül çelmek", tip:"Gerçek sohbet becerisiyle internet esprisi ayrımı yapılmalıdır.", patterns:["rizz"], strict:true },
+      { cat:"unlem", term:"mewing yapmak", meaning:"Çene kasını sıkarak duruş/görünüm egzersizi yapmak.", elder:"Bir hastalık veya tik sanma.", trad:"çene germek", tip:"Trend egzersizlerin bilimsel dayanağının sorgulanması gerektiği anlatılmalıdır.", patterns:["mewing"] },
+      { cat:"unlem", term:"red flag vermek", meaning:"İlişkide kötüye işaret bir davranış sergilemek.", elder:"Kırmızı bayrak (gerçek bayrak) ile karıştırma.", trad:"tekin olmamak", tip:"Uyarı işaretlerinin ciddiye alınması gerektiği anlatılmalıdır.", patterns:["red flag"] },
+      { cat:"unlem", term:"green flag olmak", meaning:"İlişkide iyiye işaret bir davranış sergilemek.", elder:"Trafikteki yeşil ışıkla karıştırma.", trad:"hayra alamet olmak", tip:"Olumlu davranışların da fark edilip takdir edilmesi gerektiği anlatılmalıdır.", patterns:["green flag"] },
+      { cat:"unlem", term:"side eye atmak", meaning:"Birine şüpheyle veya onaylamayarak yan gözle bakmak.", elder:"Göz hastalığıyla karıştırma.", trad:"yan gözle bakmak", tip:"Beden dilinin söze dökülmesi önerilmelidir.", patterns:["side eye"] },
+      { cat:"unlem", term:"bet demek", meaning:"Bir teklife/isteğe kısaca onay vermek.", elder:"Bahis/kumar (bet) ile karıştırma.", trad:"tamamdır", tip:"Kısa onay sözcüklerinin her dilde bulunduğu gösterilebilir.", patterns:["bet"], strict:true },
+      { cat:"unlem", term:"say less demek", meaning:"Karşı tarafın az sözle zaten anlaşıldığını belirtmek.", elder:"Kelimenin tam tersi bir emir sanıp \"neden az konuşayım\" diye şaşırma.", trad:"lafı bile istemez", tip:"Kısa cümlelerin de güçlü anlaşma yolları olduğu anlatılabilir.", patterns:["say less"] },
+      { cat:"unlem", term:"it's giving... demek", meaning:"Bir durumun/görünümün belli bir izlenim uyandırdığını belirtmek.", elder:"\"Veriyor\" kelimesini hediye bekleme sanma.", trad:"...havasını andırıyor", tip:"Benzetme yapma ihtiyacının Türkçede de karşılığı olduğu gösterilebilir.", patterns:["it's giving","its giving"] },
+      { cat:"unlem", term:"bussin demek", meaning:"Bir şeyin (genelde yiyeceğin) çok iyi/lezzetli olduğunu belirtmek.", elder:"Hiç duymadığı bir ses/kelime sanıp şaşırma.", trad:"parmak yedirir", tip:"Yöresel deyimlerin de aynı coşkuyu anlatabildiği gösterilebilir.", patterns:["bussin"] }
+    ];
+
+    /* ================= Sekme Geçişleri ================= */
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const views = document.querySelectorAll('.view');
+
+    function switchView(viewName) {
+      tabBtns.forEach(b => {
+        const isTarget = b.dataset.view === viewName;
+        b.classList.toggle('active', isTarget);
+        if (isTarget) {
+          b.classList.remove('bg-paperLight', 'text-ink', 'border-ink/20');
+          b.classList.add('bg-ink', 'text-paper', 'border-ink');
+        } else {
+          b.classList.remove('bg-ink', 'text-paper', 'border-ink');
+          b.classList.add('bg-paperLight', 'text-ink', 'border-ink/20');
+        }
+      });
+
+      views.forEach(v => {
+        if (v.id === 'view-' + viewName) {
+          v.classList.remove('hidden');
+          v.classList.add('block');
+        } else {
+          v.classList.add('hidden');
+          v.classList.remove('block');
+        }
+      });
+
+      if (viewName === 'quiz') nextQuestion();
+    }
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => switchView(btn.dataset.view));
+    });
+
+    /* ================= Kavram Rehberi Kartları ================= */
+    let activeCat = "all";
+    const pillsEl = document.getElementById('cat-pills');
+    const grid = document.getElementById('card-grid');
+    const note = document.getElementById('result-note');
+    const totalTermBadge = document.getElementById('total-term-badge');
+
+    function renderPills() {
+      totalTermBadge.textContent = TERMS.length;
+      pillsEl.innerHTML = '';
+      const all = document.createElement('button');
+      all.type = 'button';
+      all.className = `cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-colors cursor-pointer ${activeCat === 'all' ? 'bg-teal text-white border-teal' : 'bg-paperLight text-muted border-ink/15 hover:border-teal'}`;
+      all.textContent = `Tümü (${TERMS.length})`;
+      all.dataset.cat = 'all';
+      pillsEl.appendChild(all);
+
+      Object.entries(CATS).forEach(([key, label]) => {
+        const n = TERMS.filter(t => t.cat === key).length;
+        if (n === 0) return;
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = `cat-pill px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-colors cursor-pointer ${activeCat === key ? 'bg-teal text-white border-teal' : 'bg-paperLight text-muted border-ink/15 hover:border-teal'}`;
+        b.textContent = `${label} (${n})`;
+        b.dataset.cat = key;
+        pillsEl.appendChild(b);
+      });
+
+      pillsEl.querySelectorAll('.cat-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeCat = btn.dataset.cat;
+          renderPills();
+          applyFilters();
+        });
+      });
+    }
+
+    function renderCards(list) {
+      grid.innerHTML = '';
+      note.textContent = `${list.length} kavram kartı gösteriliyor (arka yüzünü çevirmek için karta tıklayın)`;
+      list.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'card perspective-1200 h-60 cursor-pointer select-none';
+        const isUser = item.cat === 'oneri';
+        card.innerHTML = `
+          <div class="card-inner relative w-full h-full transform-style-3d">
+            <!-- Ön Yüz -->
+            <div class="face front absolute inset-0 backface-hidden bg-paperLight border ${isUser ? 'border-teal border-2' : 'border-ink/15'} rounded-2xl p-5 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+              <div class="flex items-center justify-between gap-2">
+                <span class="text-[11px] font-semibold uppercase tracking-wider ${isUser ? 'text-teal' : 'text-muted'}">
+                  ${isUser ? '★ Sizin Öneriniz' : CATS[item.cat]}
+                </span>
+                <span class="text-[11px] text-muted">↻ çevir</span>
+              </div>
+              <div>
+                <div class="font-mono text-lg sm:text-xl font-bold text-teal mb-1.5">${item.term}</div>
+                <p class="text-xs sm:text-sm text-ink/85 leading-snug line-clamp-3">${item.meaning}</p>
+              </div>
+              <div class="pt-2 border-t border-ink/10 flex items-center justify-between text-xs">
+                <span class="text-muted">Türkçe karşılığı:</span>
+                <span class="font-serif italic font-semibold text-brick truncate max-w-[60%]">"${item.trad}"</span>
+              </div>
+            </div>
+
+            <!-- Arka Yüz -->
+            <div class="face back absolute inset-0 backface-hidden rotate-y-180 bg-ink text-paper rounded-2xl p-5 flex flex-col justify-between shadow-md">
+              <div>
+                <div class="text-[11px] uppercase tracking-wider text-paper/60 mb-1">Aile Büyüğünün Olası Algısı</div>
+                <p class="text-xs sm:text-sm text-paper/90 leading-snug">${item.elder}</p>
+              </div>
+              <div class="bg-white/10 rounded-xl p-2.5">
+                <div class="text-[10px] uppercase tracking-wider text-paper/60">Geleneksel Türkçe Karşılığı</div>
+                <div class="font-serif italic text-base sm:text-lg text-[#e9c9ad] font-semibold">"${item.trad}"</div>
+              </div>
+              <div class="text-[11px] text-paper/75 leading-snug">
+                <strong class="text-teal">İpucu:</strong> ${item.tip}
+              </div>
+            </div>
+          </div>`;
+        card.addEventListener('click', () => card.classList.toggle('flipped'));
+        grid.appendChild(card);
+      });
+    }
+
+    function applyFilters() {
+      const q = document.getElementById('search').value.trim().toLowerCase();
+      const filtered = TERMS.filter(t => {
+        const matchesCat = activeCat === 'all' || t.cat === activeCat;
+        const matchesQuery = !q ||
+          t.term.toLowerCase().includes(q) ||
+          t.trad.toLowerCase().includes(q) ||
+          t.meaning.toLowerCase().includes(q);
+        return matchesCat && matchesQuery;
+      });
+      renderCards(filtered);
+    }
+
+    document.getElementById('search').addEventListener('input', applyFilters);
+    renderPills();
+    applyFilters();
+
+    /* ================= Terim Ekleme Formu ================= */
+    document.getElementById('suggest-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const term = document.getElementById('f-term').value.trim();
+      const trad = document.getElementById('f-trad').value.trim();
+      const meaning = document.getElementById('f-meaning').value.trim();
+      const elder = document.getElementById('f-elder').value.trim() || "Henüz bir yanlış anlama örneği eklenmedi.";
+      const tipText = document.getElementById('f-tip').value.trim() || "Anlamını aile büyüğüne kısaca açıklamak iletişimi kolaylaştırır.";
+      if (!term || !trad || !meaning) return;
+
+      TERMS.unshift({
+        cat: "oneri",
+        term,
+        meaning,
+        elder,
+        trad,
+        tip: tipText,
+        patterns: [term.toLowerCase()]
+      });
+
+      e.target.reset();
+      activeCat = "oneri";
+      renderPills();
+      document.getElementById('search').value = '';
+      applyFilters();
+      document.querySelector('.suggest').removeAttribute('open');
+    });
+
+    /* ================= Eşleştirme Oyunu ================= */
+    let score = 0, total = 0, current = null, answered = false;
+    const qTerm = document.getElementById('q-term');
+    const qOptions = document.getElementById('q-options');
+    const qScore = document.getElementById('q-score');
+    const qNext = document.getElementById('q-next');
+
+    function shuffle(arr) { return [...arr].sort(() => Math.random() - 0.5); }
+
+    function nextQuestion() {
+      answered = false;
+      qNext.disabled = true;
+      current = TERMS[Math.floor(Math.random() * TERMS.length)];
+      qTerm.textContent = current.term;
+
+      const wrongPool = shuffle(TERMS.filter(t => t !== current)).slice(0, 3);
+      const options = shuffle([current, ...wrongPool]);
+      qOptions.innerHTML = '';
+
+      options.forEach(opt => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'opt-btn w-full text-left px-4 py-3 rounded-xl border border-ink/20 bg-white font-serif italic text-sm sm:text-base hover:border-teal transition-all cursor-pointer';
+        b.textContent = '"' + opt.trad + '"';
+        b.addEventListener('click', () => {
+          if (answered) return;
+          answered = true;
+          total++;
+          if (opt === current) {
+            b.classList.remove('bg-white', 'border-ink/20');
+            b.classList.add('bg-teal/20', 'border-teal', 'font-semibold');
+            score++;
+          } else {
+            b.classList.remove('bg-white', 'border-ink/20');
+            b.classList.add('bg-brick/20', 'border-brick');
+            const correctBtn = [...qOptions.children].find(c => c.textContent === '"' + current.trad + '"');
+            if (correctBtn) {
+              correctBtn.classList.remove('bg-white', 'border-ink/20');
+              correctBtn.classList.add('bg-teal/20', 'border-teal', 'font-semibold');
+            }
+          }
+          qScore.textContent = `Skor: ${score} / ${total}`;
+          qNext.disabled = false;
+        });
+        qOptions.appendChild(b);
+      });
+    }
+    qNext.addEventListener('click', nextQuestion);
+
+    /* ================= Konuşma Analizi Testi ================= */
+    function escapeRe(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+    function analyzeText(fullText) {
+      const lower = fullText.toLowerCase();
+      const found = [];
+      TERMS.forEach(item => {
+        const patterns = item.patterns || [item.term.toLowerCase()];
+        const matched = patterns.some(p => {
+          if (item.strict) {
+            return new RegExp('\\b' + escapeRe(p) + '\\b', 'i').test(fullText);
+          }
+          return lower.includes(p);
+        });
+        if (matched) found.push(item);
+      });
+      return found;
+    }
+
+    function buildEditedText(originalText, foundItems) {
+      let result = originalText;
+      const phraseItems = foundItems.filter(it => (it.patterns || []).some(p => p.includes(' ')));
+      const wordItems = foundItems.filter(it => !phraseItems.includes(it));
+
+      [...phraseItems, ...wordItems].forEach(item => {
+        const patterns = item.patterns || [item.term.toLowerCase()];
+        patterns.forEach(p => {
+          const esc = escapeRe(p);
+          const re = p.includes(' ')
+            ? new RegExp(esc, 'gi')
+            : new RegExp('[a-zA-ZçğıöşüÇĞİÖŞÜ\']*' + esc + '[a-zA-ZçğıöşüÇĞİÖŞÜ\']*', 'gi');
+          result = result.replace(re, `«${item.trad}»`);
+        });
+      });
+      return result;
+    }
+
+    document.getElementById('fill-demo-btn').addEventListener('click', () => {
+      document.getElementById('q1').value = "Bugün okulda çok toxic bir ortam vardı, resmen cringe oldum ve mood'um kaçtı.";
+      document.getElementById('q2').value = "Az önce viral olmuş bir reels gördüm, arkadaşlarıma dm attım ve story paylaştım.";
+      document.getElementById('q3').value = "Anneanneme arkadaşım beni ghostladı dedim, o da bana hayalet mi gördün diye sordu.";
+      document.getElementById('q4').value = "Eski sınıf arkadaşımın profilini stalklarken yanlışlıkla beğendim, no cap yerin dibine girdim.";
+    });
+
+    document.getElementById('test-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const answers = ['q1', 'q2', 'q3', 'q4'].map(id => document.getElementById(id).value.trim());
+      const combined = answers.filter(Boolean).join('\n\n');
+      const resultWrap = document.getElementById('result-wrap');
+
+      if (!combined) {
+        resultWrap.classList.add('hidden');
+        return;
+      }
+
+      const rawFound = analyzeText(combined);
+      const seen = new Set();
+      const found = rawFound.filter(it => {
+        if (seen.has(it.term)) return false;
+        seen.add(it.term);
+        return true;
+      });
+
+      document.getElementById('r-count').textContent = found.length;
+      document.getElementById('r-original').textContent = combined;
+
+      const chipRow = document.getElementById('r-chips');
+      const emptyNote = document.getElementById('r-empty');
+      chipRow.innerHTML = '';
+
+      if (found.length === 0) {
+        emptyNote.classList.remove('hidden');
+        document.getElementById('r-edited').textContent = combined;
+      } else {
+        emptyNote.classList.add('hidden');
+        found.forEach(item => {
+          const chip = document.createElement('span');
+          chip.className = 'inline-flex items-center gap-1.5 bg-white border border-ink/15 rounded-full px-3 py-1 text-xs sm:text-sm shadow-xs';
+          chip.innerHTML = `<span class="font-mono font-semibold text-teal">${item.term}</span><span class="text-muted">→</span><span class="font-serif italic text-brick font-medium">"${item.trad}"</span>`;
+          chipRow.appendChild(chip);
+        });
+        document.getElementById('r-edited').textContent = buildEditedText(combined, found);
+      }
+
+      resultWrap.classList.remove('hidden');
+      resultWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    document.getElementById('test-reset').addEventListener('click', () => {
+      document.getElementById('test-form').reset();
+      document.getElementById('result-wrap').classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
